@@ -15,7 +15,8 @@ export const useSettingsStore = defineStore('settings', {
     // 有哪些鈴聲
     alarms: [
       { id: 1, name: '鬧鐘', file: new URL('@/assets/alarm.mp3', import.meta.url).href },
-      { id: 2, name: 'Yay', file: new URL('@/assets/yay.mp3', import.meta.url).href }
+      { id: 2, name: 'Yay', file: new URL('@/assets/yay.mp3', import.meta.url).href },
+      { id: 3, name: '沒牙跳舞', file: new URL('@/assets/沒牙跳舞.mov', import.meta.url).href }
     ],
     // 目前選的是哪個
     selectedAlarm: 1
@@ -28,7 +29,7 @@ export const useSettingsStore = defineStore('settings', {
     }
   }
 })
-// 在你提供的 Vue.js Pinia store 文件中，有一个 `getters` 部分，其中定义了一个名为 `selectedAlarmFile` 的 getter 方法。让我解释一下这段代码：x` 
+// 在你提供的 Vue.js Pinia store 文件中，有一个 `getters` 部分，其中定义了一个名为 `selectedAlarmFile` 的 getter 方法。让我解释一下这段代码：x`
 
 // 这个 getter 方法名为 `selectedAlarmFile`，它用于获取当前选定的闹钟对应的音频文件的路径。
 
