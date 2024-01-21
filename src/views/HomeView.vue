@@ -7,7 +7,7 @@
       :rotate="360"
       :size="300"
       :width="40"
-      :model-value="value"
+      :model-value="currentSec"
       color="#AED581"
 
     >
@@ -73,6 +73,19 @@
 <style scoped>
 .v-progress-circular {
   margin: 1rem;
+  animation: changeColor 30s infinite linear;
+}
+
+@keyframes changeColor {
+  0% {
+    color: #AED581;
+  }
+  50% {
+    color: #609425; /* 中途切換的顏色 */
+  }
+  100% {
+    color: #AED581;
+  }
 }
 </style>
 
@@ -159,9 +172,16 @@ const currentTime = computed(() => {
   const s = (timeleft.value % 60).toString().padStart(2, '0')
   return m + ':' + s
 })
+
+const currentSec = computed(() => {
+  let sec = (timeleft.value % 60)
+  sec = (sec / 60) * 100
+  return sec
+})
+
 </script>
 
-<script>
+<!-- <script>
 export default {
   data () {
     return {
@@ -181,4 +201,4 @@ export default {
     }, 15000)
   }
 }
-</script>
+</script> -->
